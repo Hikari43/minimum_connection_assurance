@@ -1,1 +1,4 @@
-# minimum_connection_assurance
+# Minimum Connection Assurance
+
+The code will be available soon!
+
