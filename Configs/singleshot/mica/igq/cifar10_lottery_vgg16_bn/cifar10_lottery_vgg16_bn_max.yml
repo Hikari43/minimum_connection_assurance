@@ -1,0 +1,47 @@
+## Training Hyperparameters ##
+dataset          : cifar10
+model            : vgg16-bn
+model_class      : lottery
+dense_classifier : False
+pretrained       : False
+optimizer        : momentum
+train_batch_size : 128
+test_batch_size  : 256
+pre_epochs       : 0
+post_epochs      : 160
+lr               : 0.1
+lr_drops         : [60,  120]
+lr_drop_rate     : 0.1
+weight_decay     : 0.0001
+
+## Pruning Hyperparameters ##
+pruner                : mica
+sparsity_distribution : igq
+compression           : 0.0
+prune_epochs          : 1
+compression_schedule  : exponential
+mask_scope            : local
+prune_dataset_ratio   : 10
+prune_batch_size      : 256
+V_out_select          : max
+prune_bias            : False
+prune_batchnorm       : False
+prune_residual        : False
+prune_train_mode      : False
+reinitialize          : False
+shuffle               : False
+invert                : False
+pruner_list           : []
+prune_epoch_list      : []
+compression_list      : []
+level_list            : []
+
+## Experiment Hyperparameters ##
+experiment : singleshot
+expid : cifar10_lottery_vgg16_bn_max
+result_dir : Results/data
+gpu : 0
+workers : 4
+no_cuda : False
+seed : 3
+verbose : False
